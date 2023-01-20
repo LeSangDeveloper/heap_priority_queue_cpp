@@ -1,5 +1,5 @@
 #ifndef HEAP_PRIORITY_QUEUE_H
-#ifndef HEAP_PRIORITY_QUEUE_H
+#define HEAP_PRIORITY_QUEUE_H
 
 #include<vector>
 
@@ -22,7 +22,7 @@ class VectorCompleteTree {
         Position parent(const Position& p);
         bool hasLeft(const Position& p);
         bool hasRight(const Position& p);
-        bool isRoot(const Position & p);
+        bool isRoot(const Position& p);
         Position root();
         Position last();
         void addLast(const E& e);
@@ -30,13 +30,13 @@ class VectorCompleteTree {
         void swap(const Position& p, const Position& q);
 };
 
-template<E>
+template<typename E>
 class IsLess {
     public:
     bool operator()(const E v1, const E v2) {
         return v1 < v2;
     }
-}
+};
 
 template<typename E, typename C>
 class HeapPriorityQueue {
@@ -49,6 +49,8 @@ class HeapPriorityQueue {
         void insert(const E& e);
         const E& min();
         void removeMin();
-}
+
+        typedef typename VectorCompleteTree<E>::Position Position;
+};
 
 #endif
