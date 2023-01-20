@@ -30,4 +30,25 @@ class VectorCompleteTree {
         void swap(const Position& p, const Position& q);
 };
 
+template<E>
+class IsLess {
+    public:
+    bool operator()(const E v1, const E v2) {
+        return v1 < v2;
+    }
+}
+
+template<typename E, typename C>
+class HeapPriorityQueue {
+    private:
+        VectorCompleteTree<E> T;
+        C isLess;
+    public:
+        int size() const;
+        bool empty() const;
+        void insert(const E& e);
+        const E& min();
+        void removeMin();
+}
+
 #endif
