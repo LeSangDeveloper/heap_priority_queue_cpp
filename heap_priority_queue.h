@@ -28,6 +28,6 @@ class VectorCompleteTree {
         void addLast(const E& e);
         void removeLast();
         void swap(const Position& p, const Position& q);
-}
+};
 
 #endif
